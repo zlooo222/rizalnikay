@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071525">
+  <title>The Rizal Files | Digital Detective</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="The Rizal Files home">
+	<span class="brand-icon">⌕</span><span>THE <b>RIZAL FILES</b>
+	<small>DIGITAL INVESTIGATION UNIT</small></span>
+	</a>
+    <div class="top-status"><span class="status-dot"></span> ARCHIVE SYSTEM ONLINE</div>
+  </header>
+
+  <main class="app-shell">
+    <section id="welcome-screen" class="screen welcome-screen">
+      <div class="eyebrow"><span class="eyebrow-line"></span> CLASSIFIED HISTORICAL ARCHIVE</div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="tag">CASE ACCESS: RESTRICTED</div>
+          <h1>THE RIZAL<br><span>FILES</span></h1>
+          <p class="hero-subtitle">Every clue tells a story. Every file reveals the truth.</p>
+          <p class="body-copy">A historical archive has been locked. Become a digital detective, examine the evidence, and recover the records connected to Dr. José Rizal.</p>
+         
+		 <form id="start-form" class="start-form">
+            <label for="player-name">DETECTIVE CODENAME</label>
+            <div class="input-row">
+			<span class="input-prefix">&gt;_</span>
+			<input id="player-name" maxlength="24" placeholder="Enter your name..." autocomplete="off" required>
+			<button type="submit" class="primary-btn">START INVESTIGATION <span>↗</span>
+			</button></div>
+            <p class="form-note">NO ACCOUNT REQUIRED · PROGRESS SAVED IN THIS SESSION</p>
+          </form>
+        </div>
+      
+	  <div class="hero-visual" aria-label="Digital archive illustration">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="scan-line"></div>
+        <div class="holo-card">
+        <div class="holo-top"><span>ARCHIVE_001</span><span class="live-label">● LIVE</span></div>
+        <div class="portrait-placeholder"><span class="portrait-symbol">◉</span><span>HISTORICAL<br>SUBJECT</span>
+		</div>
+        <div class="holo-name">JOSÉ RIZAL</div>
+		<div class="holo-meta">1861 — 1896 <span>/// PHILIPPINES</span></div>
+		<div class="fake-data"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+		</div>
+		<div class="holo-footer"><span>FILE STATUS</span><b>PARTIALLY LOCKED</b></div>
+	    </div>
+        <div class="floating-chip chip-one">⌁ EVIDENCE DETECTED</div>
+         <div class="floating-chip chip-two"># HISTORICAL DATA</div>
+        </div>
+      </div>
+      <div class="welcome-bottom"><span>EDUCATIONAL GAME // HISTORY × TECHNOLOGY</span><span>PROJECT OF MIKAILA</span></div>
+    </section>
+
+    <section id="dashboard-screen" class="screen hidden">
+      <div class="dashboard-heading">
+        <div><div class="eyebrow">
+		<span class="eyebrow-line"></span> INVESTIGATION DASHBOARD</div><h2>Welcome, <span id="dashboard-name">Detective</span>.</h2>
+		<p class="muted">Your assignment: recover all twelve historical case files.</p>
+		</div>
+        <div class="rank-card"><span class="rank-icon">✦</span>
+		<div>
+		<small>CURRENT RANK</small><b id="rank-label">ROOKIE ANALYST</b>
+		</div>
+		</div>
+      </div>
+	  
+      <div class="stats-grid">
+        <div class="stat-card">
+		<span class="stat-icon">▤</span>
+		<div><small>FILES RECOVERED</small><b><span id="recovered-count">0</span><i> / 12</i></b></div>
+		</div>
+        <div class="stat-card">
+		<span class="stat-icon">⌁</span>
+		<div><small>INVESTIGATION SCORE</small><b id="score-total">000</b></div>
+		</div>
+        <div class="stat-card">
+		<span class="stat-icon">◷</span>
+		<div><small>DETECTIVE CODENAME</small><b id="profile-name">DETECTIVE</b></div>
+		</div>
+      </div>
+	  
+      <div class="section-title">
+	  <div><span class="eyebrow">YOUR ASSIGNMENTS</span><h3>Case files <span class="tiny-count">05</span></h3></div>
+	  <span class="section-side">SELECT A FILE TO BEGIN</span>
+	  </div>
+	  
+      <div id="case-grid" class="case-grid"></div>
+      <div class="dashboard-footer">
+	  <span>REMEMBER: CHECK THE CLUES BEFORE YOU SUBMIT.</span><button id="reset-game" class="text-btn">↻ RESET PROGRESS</button>
+	  </div>
+    </section>
+
+    <section id="case-screen" class="screen hidden">
+      <div class="case-toolbar">
+	  <button id="back-dashboard" class="back-btn">← ALL CASE FILES</button>
+	  <span class="case-toolbar-status">
+	  <span class="status-dot"></span> SECURE CONNECTION</span>
+	  </div>
+	  
+      <div class="case-layout">
+        <aside class="evidence-sidebar">
+          <div class="sidebar-label">ACTIVE INVESTIGATION</div>
+          <div class="case-number" id="active-case-number">CASE_01</div>
+          <h2 id="active-case-title">The Missing Novel</h2>
+          <p id="active-case-desc" class="muted">Investigate the evidence.</p>
+          
+		  <div class="sidebar-divider"></div>
+          <div class="sidebar-label">CASE PROGRESS</div>
+          <div class="progress-track"><div id="case-progress-bar" class="progress-fill"></div></div>
+          <div class="progress-label"><span id="case-progress-text">FILE 01 OF 05</span><span id="case-progress-percent">0%</span></div>
+          <div class="evidence-stamp">▣ <span>HISTORICAL<br>RECORD</span></div>
+          <div class="sidebar-note">Use the clues, think carefully, and recover the archive one case at a time.</div>
+        </aside>
+		
+        <section class="investigation-panel">
+          <div class="panel-top">
+		  <span><span class="tiny-dot"></span> EVIDENCE CONSOLE</span>
+		  <span id="challenge-type">MULTIPLE CHOICE</span>
+		  </div>
+		  
+          <div id="challenge-content"></div>
+          <div class="panel-actions">
+		  <button id="hint-button" class="secondary-btn">◉ REQUEST A HINT <span>(−5 PTS)</span></button>
+		  <div id="feedback" class="feedback" aria-live="polite"></div>
+		  </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="result-screen" class="screen hidden">
+      <div class="result-wrap">
+        <div class="result-emblem">✓</div>
+		<div class="eyebrow centered">
+		<span class="eyebrow-line"></span> INVESTIGATION COMPLETE <span class="eyebrow-line"></span>
+		</div>
+		
+        <h1>CASE <span>CLOSED.</span></h1>
+        <p class="muted result-intro">The historical archive has been recovered, Detective.</p>
+        
+		<div class="final-score-card">
+		<small>FINAL INVESTIGATION SCORE</small>
+		<div><span id="final-score">000</span><i> / 500</i></div><b id="final-rank">MASTER DIGITAL DETECTIVE</b>
+		</div>
+		
+        <div class="result-stats"><div>
+		<small>FILES RECOVERED</small>
+		<b id="final-files">5 / 5</b>
+		</div>
+		<div>
+		<small>HINTS USED</small>
+		<b id="final-hints">0</b>
+		</div>
+		<div>
+		
+		<small>CASE STATUS</small>
+		<b class="success-text">RESOLVED</b></div>
+		</div>
+        <div class="result-actions">
+		<button id="play-again" class="primary-btn">INVESTIGATE AGAIN ↻</button>
+		<button id="review-files" class="secondary-btn">REVIEW CASE FILES</button>
+		</div>
+        <p class="disclaimer">THE RIZAL FILES is an educational game. Cipher messages are fictional puzzles; historical information is presented for learning.</p>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="site-footer">
+  <span>THE RIZAL FILES <b>©</b> MIKAILA R. VILLARUEL </span>
+  <span>4-ICT / RIZAL <b>◆</b></span>
+  </footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
